@@ -56,6 +56,7 @@ Công cụ: Claude Code (desktop) trên bộ skill Takumi. Agent chính điều 
 - **Tốn token ở bước worker.** Worker không có tool nên agent phải chép toàn bộ dữ liệu lô vào prompt (khoảng 10 KB × 5). Với backlog vài trăm issue nên dùng một bước gom lô có giới hạn, hoặc cho worker đọc file chỉ-đọc.
 - **Môi trường Windows gây lỗi lặt vặt** (bảng mã, `python -I` bỏ qua biến môi trường). Nên chuẩn hoá `PYTHONUTF8=1` trong cấu hình dự án từ đầu.
 - **Script chưa có test tự động.** Hiện kiểm bằng đọc lại board. Làm thật cần test cho phần suy trạng thái container và quy tắc quy giờ.
-- **Issue Done chưa được đóng trên GitHub.** Đóng issue là thao tác thêm trên repo public nên để người quyết.
+- **Đóng issue chưa đi cùng đổi Status.** Thanh tiến độ sub-issue của GitHub đếm theo issue đã đóng, không theo trường Status. AI chỉ phát hiện điều này khi mở Project ở chế độ chưa đăng nhập, sau khi ghi Status Done. Người duyệt rồi mới đóng 16 issue (14 task lá + 2 container đã xong hết con). Làm thật nên để workflow của Project đồng bộ hai chiều Status ↔ đóng / mở issue.
+- **View của Project không cấu hình được bằng API.** Các cột SWP, giờ, Iteration, người phụ trách phải do người tự bật trên giao diện. Người chưa đăng nhập cũng không mở được danh sách sub-issue, nên cần cột Parent issue.
 
 **Chưa có ý tưởng tốt:** làm sao để AI tự nhận ra khi giả định (A01–A11) đã cũ mà khách chưa trả lời. Hiện vẫn dựa vào BrSE theo dõi các issue làm rõ.
