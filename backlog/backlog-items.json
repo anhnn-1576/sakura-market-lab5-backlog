@@ -216,7 +216,7 @@
     { "key": "07.2", "parent": "E07", "level": "issue", "title": "[SCR-F08-01] UI: lối vào 紛争登録 và trạng thái offline", "labels": ["layer:ui"],
       "spec": "SCR-F08-01 D1, D2",
       "desc": "Link 紛争登録 trên dòng chênh lệch (chỉ link, màn tranh chấp chưa làm); offline dùng 01.3.2.\nXong khi: khớp wireframe." },
-    { "key": "07.3", "parent": "E07", "level": "issue", "title": "Job sau khoá sổ: tạo báo cáo đối soát ngày, cảnh báo nếu chưa xong trước 11:00 JST", "labels": ["layer:api"],
+    { "key": "07.3", "parent": "E07", "level": "issue", "title": "Job sau khoá sổ: tạo báo cáo đối soát ngày (hạn 11:00 JST), email cảnh báo lúc 10:30 nếu chưa xong", "labels": ["layer:api"],
       "spec": "SCR-F08-01 D4; G13; PREMISE S04",
       "desc": "Khoá ngày xong thì job tạo báo cáo đối soát của ngày đó; 10:30 JST chưa có báo cáo thì gửi email cảnh báo. Các báo cáo RPT khác không thuộc đợt này.\nXong khi: test job; báo cáo khớp màn đối soát." },
 

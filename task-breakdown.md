@@ -68,7 +68,7 @@ BR-INC-01 có nhiều biến, mỗi biến sai theo một kiểu riêng. Gộp c
 |---|---|---|
 | Đối tượng tính: giao dịch 確定 trong kỳ, giá trị hiệu lực sau sửa, chỉ người có `payments` kỳ đó | #73 | Đây là chỗ prototype đang sai ngầm: chỉ đọc được khoảng 1.000 giao dịch mỗi kỳ (G23), trong khi một tháng bình thường có khoảng 18.000. Phải chuyển sang tổng hợp trong SQL và có test tải riêng. Còn phụ thuộc giả định A11 (giao chia lần) |
 | Đúng hạn: `paid_date ≤ due_date`, không có ân hạn, theo ngày JST; trễ hoặc chưa trả thì thưởng bằng 0 nhưng vẫn lưu dòng | #74 | Quy tắc "trễ 1 ngày cũng mất toàn bộ thưởng" có ảnh hưởng tiền lớn và dễ lệch múi giờ. Cần test biên theo ngày riêng |
-| Phiên bản quy tắc: chọn bản 承認済 theo ngày hiệu lực, tách dòng khi kỳ có 2 bản, bỏ bản 取消 | #75 | Phải đổi cấu trúc dữ liệu (text → FK, G12) và phụ thuộc #82 (rollback). Tách ra để làm song song với #82 |
+| Phiên bản quy tắc: chọn bản 承認済 theo ngày hiệu lực, tách dòng khi kỳ có 2 bản, bỏ bản 取消 | #75 | Phải đổi cấu trúc dữ liệu (text → FK, G12) và phụ thuộc #83 (trạng thái 取消, `rollback_of`). Tách ra để làm song song với #83 |
 | Bậc tỉ lệ: chọn theo tổng cả kỳ (mọi phiên bản cộng lại); đúng bằng ngưỡng thì lấy bậc trên | #76 | Ca biên INC-EDGE-01 của RFP. Chọn bậc theo tổng kỳ nhưng áp cho từng dòng phiên bản là chỗ dễ làm sai |
 | Hệ số thuế 110/100 và cắt lẻ JPY bằng số nguyên | #77 | Ca INC-EDGE-03. Dùng số thực là lệch 1 円. Cần test số rất lớn để chắc không tràn |
 | Điều chỉnh sau khi chốt kỳ: dòng 差分 ở kỳ sau, kế thừa tỉ lệ và cờ đúng hạn của kỳ gốc, không sửa kỳ gốc; quy tắc làm tròn số âm | #78 | Ca INC-EDGE-02, nối với #46 (sửa sau chốt). Còn câu hỏi mở về số âm (A10) và về bậc của 差分 (Q-F0902-03). Tách ra để khi khách trả lời chỉ phải sửa một task |

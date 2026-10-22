@@ -51,7 +51,7 @@ giờ = SWP × 1,5          (issue làm rõ: nhãn clarify)
 | [#46](https://github.com/anhnn-1576/sakura-market-lab5-backlog/issues/46) Sửa sau chốt có duyệt | 5 | 18 | 32,0 | Logic duyệt và delta giữ như prototype |
 | [#54](https://github.com/anhnn-1576/sakura-market-lab5-backlog/issues/54) Giao hàng và ngoại lệ | 5 | 26 | 44,0 | Gồm #56, task lớn nhất (10 SWP) |
 | [#60](https://github.com/anhnn-1576/sakura-market-lab5-backlog/issues/60) Đối soát và khoá ngày | 8 | 25 | 45,5 | |
-| [#71](https://github.com/anhnn-1576/sakura-market-lab5-backlog/issues/71) **完納奨励金** | 9 | 25 | 46,5 | Ràng buộc đặc thù. Mỗi bước tính chỉ 1–2 SWP (#74, #76, #77 mỗi bước 1 SWP), vì từng biến đã tách riêng. Phần nặng nằm ở ghi nguyên tử (#79, 6 SWP) và nghiệm thu test vector (#81, 5 SWP) |
+| [#71](https://github.com/anhnn-1576/sakura-market-lab5-backlog/issues/71) **完納奨励金** | 9 | 25 | 46,5 | Ràng buộc đặc thù. 6 bước tính được 1–4 SWP mỗi bước, đa số 1–2 (#74, #76, #77 mỗi bước 1 SWP; lớn nhất là bước 3 phiên bản quy tắc #75, 4 SWP), vì từng biến đã tách riêng. Phần nặng nằm ở ghi nguyên tử (#79, 6 SWP) và nghiệm thu test vector (#81, 5 SWP) |
 | [#82](https://github.com/anhnn-1576/sakura-market-lab5-backlog/issues/82) Phiên bản quy tắc | 2 | 9 | 15,5 | |
 | [#85](https://github.com/anhnn-1576/sakura-market-lab5-backlog/issues/85) Làm rõ với khách | 8 | 24 | 36,0 | Việc của BrSE, không cộng quality gate |
 | **Tổng** | **67** | **250** | **434,0** | ≈ 54,3 ngày công (8 giờ/ngày) |

@@ -7,7 +7,7 @@
 | Thời điểm số liệu | Cuối ngày 06/11/2026 |
 | Đội (người phụ trách giả định) | BE1, BE2 (backend) · FE1 (frontend) · QA1 · BrSE1. FE2 vào từ Sprint 2 |
 
-Đây là sprint **giả lập** để minh hoạ cách vận hành Project và báo cáo. Ngày Done và trạng thái là số liệu dựng, không phải tiến độ thật. Nguồn dữ liệu: [`backlog/sprint-plan.json`](backlog/sprint-plan.json). Board được cập nhật bằng [`scripts/apply-sprint-plan-to-github-project.py`](scripts/apply-sprint-plan-to-github-project.py), burndown vẽ bằng [`scripts/render-sprint-burndown.py`](scripts/render-sprint-burndown.py). Cả hai đọc cùng file dữ liệu đó.
+Đây là sprint **giả lập** để minh hoạ cách vận hành Project và báo cáo. Ngày Done, trạng thái và các sự kiện trong phần diễn giải (ngày gửi câu hỏi, ngày code xong, nguyên nhân trễ) đều là kịch bản dựng, không phải tiến độ thật. Nguồn dữ liệu: [`backlog/sprint-plan.json`](backlog/sprint-plan.json). Board được cập nhật bằng [`scripts/apply-sprint-plan-to-github-project.py`](scripts/apply-sprint-plan-to-github-project.py), burndown vẽ bằng [`scripts/render-sprint-burndown.py`](scripts/render-sprint-burndown.py). Cả hai đọc cùng file dữ liệu đó.
 
 **Tóm tắt:** Sprint 1 cam kết 28 task (97 SWP · 165,5 h). Đã xong 14 task (46 SWP · 83 h), tức **50 % số giờ**. Phần nền tảng mà các màn khác dựa vào đã xong: tệp chứng cứ, bảng thông báo, job mở ngày, mô hình dữ liệu tư cách, 4/6 bước tính 完納奨励金. Phần trễ nằm ở 3 chỗ: hàng đợi offline (#10), cổng review (#18), và chưa có câu trả lời nào của khách cho 8 nhóm câu hỏi. Theo tốc độ hiện tại, đợt này **không kịp kết thúc ở Sprint 3 (04/12)** nếu không tăng năng lực hoặc thu hẹp phạm vi (xem rủi ro R1).
 
@@ -17,14 +17,14 @@ Phạm vi: 28 task lá của Sprint 1. SWP và giờ lấy từ [estimate.md](es
 
 | Trạng thái | Số issue | Tổng SWP | Ghi chú |
 |---|---:|---:|---|
-| Done | 14 | 46 | 83 h. #3, #4, #5, #7, #11, #12, #15, #16, #19, #53, #73, #74, #76, #77. Gồm tệp chứng cứ (DB, API, UI), bảng thông báo, job 02:00, mô hình tư cách và hàm kiểm theo căn cứ, test hồi quy sửa sau chốt, bước 1/2/4/5 của 完納奨励金 |
+| Done | 14 | 46 | 83 h. #3, #4, #5, #7, #11, #12, #15, #16, #19, #53, #73, #74, #76, #77. Gồm tệp chứng cứ (DB, API, UI), bảng thông báo, job 02:00, trạng thái offline chuẩn (#11), mô hình tư cách và hàm kiểm theo căn cứ, form đăng ký người tham gia (#19, chạy với API hiện có của prototype, nối API mới khi #18 Done), test hồi quy sửa sau chốt, bước 1/2/4/5 của 完納奨励金 |
 | In Review | 1 | 5 | 8,5 h. #18 (lưu hồ sơ + tư cách nguyên tử): code xong 04/11, chờ người review 2 ngày. AI review đã đạt, người review chưa đạt thì chưa tính Done |
 | In Progress | 10 | 36 | 57 h. Code: #8 (worker SES), #10 (hàng đợi offline), #75 (bước 3: phiên bản quy tắc). Làm rõ: #86–#88, #90–#93 đã gửi khách 28/10, chưa có trả lời |
 | Blocked | 1 | 3 | 4,5 h. #89 (C04: giao hàng trên ngày đã khoá). Khách cần hỏi lại bộ phận vận hành ở bến, chưa hẹn ngày trả lời. Chặn #58 và ảnh hưởng #69 ở Sprint 3 |
 | Todo | 2 | 7 | 12,5 h. #20 (E2E đăng ký) chờ #18. #24 (UI đổi trạng thái tư cách) chưa bắt đầu vì FE1 dồn sức cho #10 |
 | **Tổng Sprint 1** | **28** | **97** | **165,5 h** |
 
-**Theo người phụ trách (giờ Done / giờ cam kết):** BE1 32,5 / 41 · BE2 25,5 / 41 · FE1 18 / 36,5 · QA1 7 / 11 · BrSE1 0 / 36.
+**Theo người phụ trách (giờ Done / giờ cam kết / năng lực):** BE1 32,5 / 41 / 40 · BE2 25,5 / 41 / 40 · FE1 18 / 36,5 / 40 · QA1 7 / 11 / 20 · BrSE1 0 / 36 / 36. BE1 và BE2 nhận vượt năng lực 1 h. Đây là một phần lý do Sprint 2 cần cam kết theo tốc độ thật (R1).
 
 **Toàn backlog:** 67 task lá · 250 SWP · 434 h. Đã Done 83 h (19 %). Sprint 2 đã lên kế hoạch 20 task (79 SWP · 138,5 h), Sprint 3 có 19 task (74 SWP · 130 h). 14 task chưa xong của Sprint 1 (51 SWP · 82,5 h) sẽ chuyển sang Sprint 2 ở buổi planning ngày 09/11.
 
@@ -49,7 +49,7 @@ Giờ chỉ được trừ khi task chuyển **Done**: đã qua cả AI review l
 
 **Thực tế lệch kế hoạch ở đâu:**
 - **Ngày đầu không trừ được giờ nào (26/10).** Ngày này dùng để dựng môi trường staging và CI cho repo prototype. Việc này không có trong backlog. Từ Sprint 2 cần một task hạ tầng riêng, hoặc trừ năng lực ngày đầu sprint.
-- **36 h làm rõ (BrSE1) không trừ được giờ nào.** Câu hỏi đã gửi đủ ngày 28/10. Theo định nghĩa xong, issue làm rõ chỉ Done khi khách trả lời và PREMISE.md đã cập nhật. 36 h này chiếm 43 % phần còn lại cuối sprint. Đây là phần đội không tự quyết được.
+- **36 h làm rõ (BrSE1) không trừ được giờ nào.** Câu hỏi đã gửi đủ ngày 28/10. Theo định nghĩa xong, issue làm rõ chỉ Done khi khách trả lời và PREMISE.md đã cập nhật. 36 h này chiếm 44 % phần còn lại cuối sprint. Đây là phần đội không tự quyết được.
 - **#10 hàng đợi offline (10 h) chưa xong.** Service Worker chạy khác nhau giữa trình duyệt của tablet thử và PC. FE1 mất 2 ngày để dựng môi trường test mất mạng. #24 vì thế chưa bắt đầu.
 - **#18 nằm ở In Review 2 ngày.** Chỉ BE1 review được phần SQL, mà BE1 đang làm #8. Đây là nút cổ chai của quality gate, không phải lỗi code.
 - **Phần đúng kế hoạch:** nhánh backend nền tảng (BE1 xong 4/5 task) và các bước tính 完納奨励金 (4/6 bước, đúng thứ tự phụ thuộc).
